@@ -1,0 +1,80 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: pink;
+}
+
+header {
+  width: 100%;
+  height: 15%;
+  background: #999;
+}
+
+h1, p {
+  margin:0;
+}
+
+section {
+  display: flex;
+  width: 80%;
+  height: 75%;
+  margin: auto;
+  background: #DDD;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-basis: auto;
+  background: #666;
+  flex-grow: 1;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 4;
+  width: 100%;
+  flex-basis: auto;
+  background: #FFF;
+}
+
+.kata-buttons {
+  flex-basis: auto;
+  flex-grow: 1;
+  margin: 10px;
+  background: #33f6ff;
+}
+#fizz-buzz-container {
+  display: none;
+}
+
+#prime-factor-container {
+  display: none;
+}
+
+#prime-results {
+  display: flex;
+  flex-direction: row;
+  
+} 
+
+.primes {
+  height: 200px;
+  width: 200px;
+  background: red;
+}
+
+#roman-numerals-container {
+  display: none;
+}
+footer {
+  width: 100%;
+  background: #999;
+  height: 10%;
+  
+}
