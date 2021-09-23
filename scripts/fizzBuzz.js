@@ -56,11 +56,11 @@ function fizzBuzzer (num) {
 
 function fizzBuzz (arr){
   if(!Array.isArray(arr)){
-    return "Please enter an array"
+    return "Please, enter an array."
   }
   for (let i = 0; i < arr.length; i++) {
     if(!Number.isInteger(arr[i]) || arr[i] < 1 || arr[i] > 100) {
-      arr[i] = "Please enter integers between 1 and 100"
+      arr[i] = "Please, enter integers between 1 and 100."
     }
     arr[i] = fizzBuzzer(arr[i]);
   }

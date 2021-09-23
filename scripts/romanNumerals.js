@@ -41,7 +41,7 @@ function toRoman(num) {
   let result = '';
 
   if (number < 1 || number > 3000 || !Number.isInteger(number)) {
-    return 'Please enter an integer between 1 and 3000';
+    return 'Please, enter an integer between 1 and 3000.';
   }
   
   const charArray = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
