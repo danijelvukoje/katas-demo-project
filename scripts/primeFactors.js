@@ -53,7 +53,7 @@ const eventListenerPrime = () => {
       });
     } else {
       const div = document.createElement('div');
-        div.classList.add('primes-error');
+        div.classList.add('primes');
         div.innerText = primeArr[1];
         primeResults.appendChild(div);
     }
