@@ -1,12 +1,38 @@
 const eventListenerFizzBuzz = () => {
   const btnContainer = document.querySelector(".button-container");
   const btnCalculate = document.querySelector("#button-fizz-calculate");
+  const allBtns = document.querySelectorAll('.button-container > div');
+  const allContainers = document.querySelectorAll('.content-container');
+
+  const resetBtns = () => {
+    allBtns.forEach(e => {
+      e.className = "kata-buttons";
+    })
+  }
+
+  // const resetOpacity = () => {
+  //   allContainers.forEach(e => {
+  //     e.style.opacity = 0;
+  //   })
+  // }
   
   btnContainer.addEventListener('click', (e) => {
     if(e.target.id === 'fizz'){
-      document.querySelector("#fizz-container").style.display = 'flex';
+      const fizzContainer = document.querySelector('#fizz-container');
+      fizzContainer.style.display= 'flex';
       document.querySelector("#roman-numerals-container").style.display = 'none';
       document.querySelector("#prime-factor-container").style.display = 'none';
+
+      //Reset button classes and apply new one
+      resetBtns();
+      allBtns[0].className = "kata-buttons-active";
+
+      //Opacity
+      // resetOpacity();
+      // setTimeout(() => {
+      //   fizzContainer.style.opacity = '1';
+      // }, 50)
+
     }
   });
   

@@ -1,12 +1,38 @@
 const eventListenerRoman = () => {
   const btnContainer = document.querySelector(".button-container");
   const btnCalculate = document.querySelector("#button-roman-calculate");
+  const allBtns = document.querySelectorAll('.button-container > div');
+  const allContainers = document.querySelectorAll('.content-container');
+
+  const resetBtns = () => {
+    allBtns.forEach(e => {
+      e.className = "kata-buttons";
+    })
+  }
+
+  // const resetOpacity = () => {
+  //   allContainers.forEach(e => {
+  //     e.style.opacity = 0;
+  //   })
+  // }
   
   btnContainer.addEventListener('click', (e) => {
     if(e.target.id === 'roman-numerals'){
+      const romanContainer = document.querySelector('#roman-numerals-container');
+      romanContainer.style.display= 'flex';
       document.querySelector("#fizz-container").style.display = 'none';
-      document.querySelector("#roman-numerals-container").style.display = 'flex';
       document.querySelector("#prime-factor-container").style.display = 'none';
+
+      //Reset button classes and apply new one
+      resetBtns();
+      allBtns[2].className = "kata-buttons-active";
+
+       //Opacity
+      // resetOpacity();
+      // setTimeout(() => {
+      //   romanContainer.style.opacity = '1';
+
+      // }, 50)
     }
   });
   
@@ -21,7 +47,7 @@ const eventListenerRoman = () => {
     const div = document.createElement('div');
     div.classList.add('romans');
     div.innerText = numeral;
-    if (numeral === 'Please, enter an integer between 1 and 3000.'){
+    if (numeral === 'Please enter an integer between 1 and 3000'){
       div.setAttribute('id', 'romanError');
     }
     romanResults.appendChild(div);

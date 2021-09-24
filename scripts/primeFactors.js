@@ -1,12 +1,39 @@
 const eventListenerPrime = () => {
   const btnContainer = document.querySelector(".button-container");
   const btnCalculate = document.querySelector("#button-prime-calculate");
+  const allBtns = document.querySelectorAll('.button-container > div');
+  const allContainers = document.querySelectorAll('.content-container');
+
+  const resetBtns = () => {
+    allBtns.forEach(e => {
+      e.className = "kata-buttons";
+    })
+  }
+
+  // const resetOpacity = () => {
+  //   allContainers.forEach(e => {
+  //     e.style.opacity = 0;
+  //   })
+  // }
   
   btnContainer.addEventListener('click', (e) => {
     if(e.target.id === 'prime-factors'){
+      const primeContainer = document.querySelector('#prime-factor-container');
+      primeContainer.style.display= 'flex';
       document.querySelector("#fizz-container").style.display = 'none';
       document.querySelector("#roman-numerals-container").style.display = 'none';
-      document.querySelector("#prime-factor-container").style.display = 'flex';
+
+      //Reset button classes and apply new one
+      resetBtns();
+      allBtns[1].className = "kata-buttons-active";
+
+      //Opacity
+      // resetOpacity();
+      // setTimeout(() => {
+      //   primeContainer.style.opacity = '1';
+
+      // }, 50)
+
     }
   });
   
@@ -81,7 +108,7 @@ function primeFactors(num){
   let factorsArray = [];
   let primesArray = primes(num);
   if(num <= 1 || !Number.isInteger(num)){
-    return [-1, "Please, enter an integer greater than 1."];
+    return [-1, "Please enter an integer greater than 1"];
   }
 
   let remainder = num;
