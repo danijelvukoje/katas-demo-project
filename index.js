@@ -1,1 +1,0 @@
-import helo from "./scripts/primeFactors.js"
